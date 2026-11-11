@@ -1,1 +1,544 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>Báo tường số 20/11 — Ươm mầm Tri thức — Chi đội 7A</title>
+<meta name="description" content="Báo tường số chào mừng Ngày Nhà giáo Việt Nam 20/11 của Chi đội 7A, Trường TH&THCS Mường Thanh — mở đầu bằng video intro “Ươm mầm Tri thức”."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,600;1,700;1,900&display=swap" rel="stylesheet"/>
+<style>
+button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+:root{--paper:#fffaf0;--paper2:#fffdf7;--ink:#2b2118;--soft:#6b5d4f;--red:#9d2c4a;--red-deep:#741e36;--gold:#b8860b;--gold2:#d9a441;--gold-soft:#fdf0c8;--green:#234434;--green2:#2f5d3a;--green-soft:#e8f0e6;--line:#e8dcc3;--card:#ffffff;--pink-soft:#fdf0f3;--shadow:0 14px 36px rgba(90,55,10,.13);--shadow-lg:0 24px 60px rgba(60,35,5,.22)}
+@media(prefers-color-scheme:dark){:root{--paper:#141713;--paper2:#1b1f1a;--ink:#f4edda;--soft:#cbbfa5;--red:#f0a8bb;--red-deep:#f6c3d1;--gold:#e6bc55;--gold2:#e6bc55;--gold-soft:#453811;--green:#a8cdb0;--green2:#a8cdb0;--green-soft:#223528;--line:#3d3d31;--card:#21261f;--pink-soft:#38242c;--shadow:0 14px 36px rgba(0,0,0,.5);--shadow-lg:0 24px 60px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.65;font-size:16.5px}img{max-width:100%;display:block}a{color:var(--red)}.wrap{max-width:1120px;margin:0 auto;padding:0 18px}h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.15;margin:0}.hand{font-family:"Dancing Script",cursive}
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:50;background:var(--paper2);border-bottom:2px solid var(--gold2);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.toolbar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:8px;padding-bottom:8px}
+.brand{font-weight:900;font-size:.92rem;color:var(--red-deep);margin-right:4px}.brand span{color:var(--gold)}
+.stat{display:inline-flex;align-items:center;gap:6px;background:var(--green-soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.86rem;font-weight:700}.stat b{font-size:1rem}
+.tb-btn{border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit;font-weight:800;font-size:.88rem;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.tb-btn.primary{background:var(--red);border-color:var(--red);color:#fff}.tb-btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}.tb-btn.active{background:var(--green2);border-color:var(--green2);color:#fff}
+.tb-spacer{flex:1}
+.edit-banner{display:none;background:#fff3cd;color:#5a4300;border-bottom:1px solid #e6c87a;padding:10px 18px;font-size:.92rem;text-align:center}
+@media(prefers-color-scheme:dark){.edit-banner{background:#3a2f10;color:#ffe9a8}}
+body.editing .edit-banner{display:block}
+body.editing [data-editable]{outline:2px dashed var(--gold);outline-offset:3px;border-radius:4px;cursor:text}
+body.editing img[data-img]{outline:3px dashed var(--red);outline-offset:3px;cursor:pointer}
+.img-hint{display:none;font-size:.8rem;color:var(--red-deep);font-weight:700;text-align:center;margin-top:6px}body.editing .img-hint{display:block}
+.img-host{position:relative}
+.img-edit-btn{position:absolute;top:10px;right:10px;z-index:6;width:44px;height:44px;min-height:44px;border-radius:50%;background:#fffdf7;border:2px solid var(--gold2);box-shadow:0 8px 20px rgba(0,0,0,.28);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.15rem;line-height:1;padding:0}
+.img-edit-btn:hover{background:var(--gold-soft);transform:scale(1.06)}
+.img-edit-btn::after{content:"Thay ảnh";position:absolute;top:48px;right:0;background:rgba(35,25,10,.88);color:#fff;font-size:.7rem;font-weight:800;padding:4px 8px;border-radius:999px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.img-edit-btn:hover::after{opacity:1}
+.hero .img-edit-btn{top:14px;right:14px}
+/* INTRO VIDEO — thay phần tiêu đề đầu trang — nền hoa chìm nhẹ nhàng quanh khung */
+.intro-hero{position:relative;padding:36px 0 40px;background-color:#fdf6e9;background-image:radial-gradient(ellipse 60% 55% at 6% 0%,rgba(217,164,65,.18),transparent 70%),radial-gradient(ellipse 55% 50% at 96% 100%,rgba(157,44,74,.10),transparent 70%),linear-gradient(180deg,#fffaf0,#fdf3dd);overflow:hidden}
+.intro-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 78% 88% at 50% 46%,rgba(255,253,245,0) 52%,rgba(255,248,230,.34) 100%);pointer-events:none}
+.intro-hero .wrap{position:relative;z-index:1;max-width:1060px}
+.intro-video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:18px;box-shadow:0 28px 64px rgba(122,62,28,.32),0 0 0 1px rgba(255,255,255,.65),0 0 42px rgba(255,183,197,.35);border:6px solid rgba(255,255,255,.94);outline:2px solid rgba(217,164,65,.45);outline-offset:3px}
+.intro-cap{color:#6d2438;background:rgba(255,253,245,.92);border:1px solid rgba(217,164,65,.38);border-radius:16px;box-shadow:0 10px 26px rgba(122,62,28,.14);font-size:.9rem;font-weight:600;text-align:center;margin:16px auto 0;max-width:880px;line-height:1.55;padding:10px 20px}
+@media(max-width:700px){.intro-hero{padding:22px 0 26px;background-position:center}.intro-video{border-width:4px;border-radius:14px}.intro-cap{border-radius:16px;padding:10px 14px;font-size:.86rem}}
+@media(prefers-color-scheme:dark){.intro-hero{background-image:radial-gradient(ellipse 60% 55% at 6% 0%,rgba(217,164,65,.12),transparent 70%),linear-gradient(180deg,#1b1f1a,#23231a)}.intro-cap{background:rgba(32,28,20,.92);color:#ffe9c2;border-color:rgba(217,164,65,.5)}}
+/* ===== KHUNG CHỜ VIDEO INTRO (bản nhẹ: chưa nhúng sẵn video) ===== */
+.intro-frame{position:relative;width:100%;aspect-ratio:16/9;background:#fffdf4;border-radius:18px;box-shadow:0 28px 64px rgba(122,62,28,.32),0 0 0 1px rgba(255,255,255,.65),0 0 42px rgba(255,183,197,.35);border:6px solid rgba(255,255,255,.94);outline:2px solid rgba(217,164,65,.45);outline-offset:3px;overflow:hidden}
+.intro-frame iframe,.intro-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.intro-frame video{object-fit:cover;background:#000}
+.intro-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;gap:6px;background:radial-gradient(ellipse 80% 90% at 50% 40%,#fffdf4,#fdf0d3);color:var(--ink)}
+.intro-empty .big{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1}
+.intro-empty strong{font-family:"Playfair Display",serif;font-size:clamp(1.15rem,3.4vw,1.7rem);color:var(--red-deep)}
+.intro-empty span{font-size:.92rem;color:var(--soft);max-width:560px}
+.intro-up-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:12px;width:min(700px,100%)}
+.intro-up-row input{flex:1 1 240px;font-family:inherit;font-size:.95rem;border:1.5px solid var(--line);border-radius:999px;background:#fff;padding:11px 16px;color:var(--ink);min-width:0}
+.upload-btn{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:900;font-size:.95rem;padding:12px 22px;cursor:pointer;box-shadow:var(--shadow)}
+.upload-btn:hover{background:var(--red-deep)}
+.upload-btn.gold2{background:var(--gold);color:#fff}.upload-btn.gold2:hover{background:#96690a}
+@media(max-width:700px){.intro-frame{border-width:4px;border-radius:14px;aspect-ratio:auto;min-height:0}.intro-empty{position:relative;inset:auto;padding:24px 14px}.intro-up-row input{flex-basis:100%}}
+/* Nhãn “khung trống” phủ trên các khung ảnh chờ */
+.upload-badge{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(35,25,10,.86);color:#fff;font-size:.8rem;font-weight:700;line-height:1.35;padding:6px 14px;border-radius:999px;z-index:5;pointer-events:none;text-align:center;max-width:94%}
+figure.side,.full-img{position:relative}
+.gcard .gimg{position:relative}
+.style-swatch{display:flex;align-items:center;justify-content:center;height:74px;font-size:2rem}
+.style-opt .style-swatch{display:flex;align-items:center;justify-content:center;padding:0}
+.sw1{background:linear-gradient(135deg,#fde9a8,#f2b63c)}.sw2{background:linear-gradient(135deg,#fde3ec,#f2a0b5)}.sw3{background:linear-gradient(135deg,#dcefd8,#8fbf7f)}.sw4{background:linear-gradient(135deg,#f7e8c9,#d9a441)}
+/* ===== HỌC SINH THÊM NỘI DUNG (dấu + ở các mục) ===== */
+.student-zone{margin-top:22px}
+.add-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--green-soft);border:1.5px dashed var(--green2);border-radius:14px;padding:14px 16px}
+.add-plus{width:52px;height:52px;min-height:52px;border-radius:50%;border:none;background:var(--red);color:#fff;font-size:2rem;line-height:1;font-weight:900;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.add-plus:hover{background:var(--red-deep);transform:scale(1.06)}
+.add-bar .add-txt b{display:block;color:var(--red-deep);font-size:1rem}
+.add-bar .add-txt span{font-size:.88rem;color:var(--soft)}
+.add-panel{display:none;background:var(--card);border:1.5px solid var(--gold2);border-radius:16px;padding:22px;box-shadow:var(--shadow);margin-top:14px}
+.add-panel.open{display:block}
+.add-panel h3{font-size:1.25rem;color:var(--red-deep);margin-bottom:4px}
+.add-panel>p{margin:0 0 14px;color:var(--soft);font-size:.93rem}
+.add-panel label{font-weight:800;font-size:.9rem;display:block;margin-bottom:6px}
+.add-panel input,.add-panel select,.add-panel textarea{width:100%;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--paper2);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px}
+.add-panel textarea{min-height:120px;resize:vertical}
+.add-panel .field{margin-bottom:13px}
+.add-panel .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.add-panel .row2{grid-template-columns:1fr}}
+.add-submit{background:var(--green2);color:#fff;border:none;font-family:inherit;font-weight:900;font-size:1rem;border-radius:999px;padding:12px 26px;cursor:pointer}
+.add-cancel{margin-left:8px}
+.add-err{color:var(--red-deep);font-weight:800;font-size:.9rem;margin:10px 0 0}
+.add-preview-img{max-height:220px;border-radius:12px;margin-top:8px;display:none;object-fit:cover;width:100%}
+.stu-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}@media(max-width:700px){.stu-list{grid-template-columns:1fr}}
+.stu-list:empty{margin-top:0}
+.stu-card{background:var(--card);border:1.5px solid var(--line);border-top:6px solid var(--gold2);border-radius:14px;padding:20px;box-shadow:var(--shadow);overflow:hidden}
+.stu-card.poem-card{text-align:center}
+.stu-card .stu-type{display:inline-block;background:var(--gold-soft);color:var(--red-deep);font-weight:900;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px;margin-bottom:8px}
+.stu-card h3{font-size:1.3rem;color:var(--red-deep);margin-bottom:4px}
+.stu-card .stu-by{color:var(--soft);font-style:italic;font-size:.88rem;margin-bottom:10px}
+.stu-card .stu-text{white-space:pre-wrap;line-height:1.8;font-size:1rem;text-align:left}
+.stu-card.poem-card .stu-text{text-align:center}
+.stu-card img.stu-img{width:100%;height:240px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+.stu-card .stu-vid{position:relative;border-radius:10px;overflow:hidden;background:#000;aspect-ratio:16/9;margin-bottom:10px}
+.stu-card .stu-vid iframe,.stu-card .stu-vid video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.stu-card .stu-acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.stu-empty{font-style:italic;color:var(--soft);font-size:.92rem;margin-top:10px}
+/* HERO */
+.hero{position:relative;background:var(--green);color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 0%,rgba(20,40,25,.12),rgba(18,36,22,.78) 78%);background-color:rgba(22,42,28,.32)}
+.hero-inner{position:relative;padding:26px 0 34px;text-align:center}
+.mast{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border-bottom:1px solid rgba(255,235,190,.45);padding-bottom:12px;color:#ffeec2}
+.pill{display:inline-block;margin-top:26px;background:#fff8ea;color:#7c2942;font-weight:900;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:7px 18px;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(2.9rem,9vw,5.6rem);font-weight:900;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45);margin:16px 0 2px}.hero h1 em{color:#ffd968;font-style:italic}
+.hero .hand-sub{font-size:clamp(2rem,6vw,3.2rem);color:#ffc7d6;text-shadow:0 2px 14px rgba(0,0,0,.4);line-height:1.1}
+.hero .sub2{font-size:clamp(1.05rem,3vw,1.4rem);font-weight:700;color:#ffedbe;margin:8px 0 0}
+.hero .occ{color:#ffe9d6;margin:6px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px auto 6px;max-width:880px}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,240,200,.55);border-radius:14px;padding:10px 16px;text-align:left;backdrop-filter:blur(4px)}.chip b{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#ffd968}.chip.gvcn{background:#fff8ea;color:#3d1520}.chip.gvcn b{color:#7c2942}.chip.gvcn span{font-weight:900;font-size:1.05rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.like-big{background:#fff;color:#9d2c4a;border:none;border-radius:999px;font-family:inherit;font-weight:900;font-size:1.02rem;padding:13px 26px;cursor:pointer;box-shadow:var(--shadow-lg);display:inline-flex;gap:8px;align-items:center}.like-big.liked{background:#9d2c4a;color:#fff}
+.hero-actions a{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:12px 20px;text-decoration:none;font-weight:800}
+.stats-band{background:var(--paper2);border-bottom:1px solid var(--line)}
+.stats-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:700px){.stats-band .wrap{grid-template-columns:1fr 1fr}}
+.statcell{padding:18px 10px;text-align:center;border-left:1px solid var(--line)}.statcell:first-child{border-left:none}.statcell b{display:block;font-family:"Playfair Display",serif;font-size:1.9rem;color:var(--red-deep);line-height:1}.statcell span{font-size:.84rem;color:var(--soft);font-weight:600}
+/* NAV */
+nav.toc{position:sticky;top:52px;z-index:40;background:var(--paper2);border-bottom:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.05)}nav.toc .wrap{display:flex;gap:2px;flex-wrap:wrap;padding-top:7px;padding-bottom:7px}nav.toc a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;display:inline-flex;align-items:center}nav.toc a:hover{background:var(--green-soft)}
+/* SECTIONS */
+section{padding:56px 0 6px}.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px double var(--gold);padding-bottom:10px;margin-bottom:24px;flex-wrap:wrap}.sec-head .no{font-family:"Playfair Display",serif;font-size:2.1rem;color:var(--gold);font-weight:900}.sec-head h2{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800;color:var(--red-deep)}.sec-head p{margin:0 0 2px auto;color:var(--soft);font-size:.92rem;font-style:italic}
+.cols{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:stretch}@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.letter{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;box-shadow:var(--shadow);position:relative}.letter p{margin:0 0 14px}.letter p:first-of-type::first-letter{font-family:"Playfair Display",serif;font-size:3.2em;float:left;line-height:.85;padding:4px 10px 0 0;color:var(--red);font-weight:900}
+.dedication{background:var(--green-soft);border-radius:10px;padding:18px;margin:18px 0}.sig{text-align:right;margin-top:20px}.sig .hand{font-size:1.8rem;color:var(--red-deep);display:block}
+figure.side{margin:0;display:flex;flex-direction:column;height:100%}figure.side img{border-radius:16px;box-shadow:var(--shadow-lg);border:6px solid var(--card);width:100%;flex:1 1 auto;height:100%;min-height:100%;object-fit:cover}@media(max-width:860px){figure.side{height:auto}figure.side img{flex:none;height:auto;min-height:0;aspect-ratio:4/3}}
+.quote{font-family:"Playfair Display",serif;font-style:italic;font-size:1.3rem;color:var(--green2);text-align:center;padding:24px 16px;margin:28px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:860px){.timeline{grid-template-columns:1fr}}.tcard{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--red);border-radius:12px;padding:22px;box-shadow:var(--shadow)}.tcard .yr{font-family:"Playfair Display",serif;font-size:2.1rem;font-weight:900;color:var(--red)}.tcard h3{font-size:1.05rem;margin:4px 0 8px;font-family:"Be Vietnam Pro",sans-serif;font-weight:800}.tcard p{margin:0;font-size:.95rem;color:var(--soft)}
+.poem-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.poem-tabs button{font-family:inherit;font-weight:800;font-size:.95rem;border:2px solid var(--red);background:transparent;color:var(--red-deep);border-radius:999px;padding:10px 18px;cursor:pointer}.poem-tabs button[aria-selected="true"]{background:var(--red);color:#fff}
+.poem{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:36px 26px;text-align:center}.poem h3{font-size:1.8rem;color:var(--red-deep)}.poem .by{color:var(--soft);font-size:.9rem;font-style:italic;margin-bottom:20px}.poem .stanza{margin:0 auto 18px;max-width:540px;font-size:1.07rem;line-height:1.95}
+.like-row{display:flex;justify-content:center;margin-top:14px}.like-btn{border:1.5px solid var(--line);background:var(--card);border-radius:999px;font-family:inherit;font-weight:800;padding:9px 18px;cursor:pointer;color:var(--red-deep);display:inline-flex;gap:7px;align-items:center}.like-btn.liked{background:var(--red);color:#fff;border-color:var(--red)}
+.essay{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:30px;margin-bottom:22px}.essay h3{font-size:1.45rem;color:var(--red-deep)}.essay .by{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px}.essay p{margin:0 0 13px}
+.full-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid var(--card);margin:6px 0 26px}.full-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+/* VIDEO */
+.video-box{background:var(--green);border-radius:18px;padding:28px;color:#eef6ee;box-shadow:var(--shadow-lg)}@media(prefers-color-scheme:dark){.video-box{background:#1d2b21}}.video-box h3{color:#ffe9a8;font-size:1.4rem;margin-bottom:6px}.video-box p{color:#cfe3cf;margin:0 0 16px}
+.video-frame{position:relative;border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9}.video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:#ffe9a8;background:radial-gradient(ellipse at center,rgba(255,220,120,.14),rgba(0,0,0,.25))}
+.video-controls{display:grid;grid-template-columns:1fr auto auto;gap:10px;margin-top:14px}@media(max-width:700px){.video-controls{grid-template-columns:1fr}}.video-controls input{font-family:inherit;font-size:1rem;border-radius:10px;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;padding:11px 12px;width:100%}.video-controls input::placeholder{color:#bcd2bc}.video-controls button,.video-controls label.btn{font-family:inherit;font-weight:800;border-radius:999px;border:none;background:#ffd968;color:#3d2b00;padding:11px 18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:700px){.gallery{grid-template-columns:1fr}}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.gcard .gimg{border:none;background:none;padding:0;width:100%;cursor:zoom-in;display:block}.gcard img{width:100%;height:280px;object-fit:cover}
+.gcard .cap{padding:14px 16px 16px}.gcard .cap b{display:block;color:var(--red-deep);font-size:1.02rem}.gcard .cap p{margin:4px 0 10px;font-size:.93rem;color:var(--soft)}
+.gfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.mini-btn{border:1.5px solid var(--line);background:var(--card);border-radius:999px;font-family:inherit;font-weight:700;font-size:.85rem;padding:7px 13px;cursor:pointer;color:var(--ink)}.mini-btn.liked{background:var(--red);color:#fff;border-color:var(--red)}
+/* WISHES */
+.wish-hero{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid var(--card);margin-bottom:20px;position:relative}.wish-hero img{width:100%;height:240px;object-fit:cover}.wish-hero .ov{position:absolute;inset:auto 0 0 0;background:rgba(35,25,10,.55);color:#fff;padding:12px 18px;font-weight:700}
+.wishes{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.wishes{grid-template-columns:1fr}}
+.wishcard{background:var(--card);border:2px dashed var(--gold2);border-radius:14px;padding:20px;box-shadow:var(--shadow)}.wishcard.feature{border:2px solid var(--red);background:var(--gold-soft)}
+.wish-toggle{width:100%;text-align:left;background:none;border:none;font-family:inherit;color:var(--ink);cursor:pointer;padding:0}.wish-toggle .to{font-weight:900;color:var(--red-deep);font-size:1.02rem;display:block;margin-bottom:4px}.wish-toggle .hint{color:var(--gold);font-weight:800;font-size:.87rem}
+.wishcard .msg{display:none;margin-top:10px;font-size:.98rem;line-height:1.7}.wishcard.open .msg{display:block}.wishcard.open .hint{display:none}
+.wishcard .wfoot{margin-top:12px;display:flex;gap:8px}
+.wish-form{background:var(--pink-soft);border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:22px;box-shadow:var(--shadow)}.wish-form h3{font-size:1.35rem;color:var(--red-deep)}.wish-form>p{margin:6px 0 16px;color:var(--soft);font-size:.95rem}
+.wish-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.wish-form .row{grid-template-columns:1fr}}.wish-form label{font-weight:800;font-size:.9rem;display:block;margin-bottom:6px}.wish-form input,.wish-form select,.wish-form textarea{width:100%;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px}.wish-form textarea{min-height:100px;resize:vertical}.wish-form .field{margin-bottom:14px}
+.wish-form button[type=submit]{background:var(--green2);color:#fff;border:none;font-family:inherit;font-weight:900;font-size:1rem;border-radius:999px;padding:13px 28px;cursor:pointer}@media(prefers-color-scheme:dark){.wish-form button[type=submit]{background:#2f5d3a}}
+.note{font-size:.86rem;color:var(--soft);margin:10px 0 0}
+.to-picker{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}@media(max-width:700px){.to-picker{grid-template-columns:1fr}}
+.to-opt{border:2px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;cursor:pointer;font-family:inherit;text-align:left;color:var(--ink)}
+.to-opt b{display:block;font-size:1rem;color:var(--red-deep)}.to-opt span{font-size:.88rem;color:var(--soft)}
+.to-opt[aria-pressed="true"]{border-color:var(--red);background:var(--pink-soft);box-shadow:var(--shadow)}
+.style-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}@media(max-width:700px){.style-picker{grid-template-columns:1fr 1fr}}
+.style-opt{border:2px solid var(--line);background:var(--card);border-radius:12px;padding:0;cursor:pointer;font-family:inherit;overflow:hidden;text-align:center;color:var(--ink)}
+.style-opt img{width:100%;height:74px;object-fit:cover}
+.style-opt span{display:block;font-weight:800;font-size:.84rem;padding:8px 4px}
+.style-opt[aria-pressed="true"]{border-color:var(--red);box-shadow:var(--shadow)}
+.thiep-preview{border:2px solid var(--gold2);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:var(--shadow);margin:6px 0 16px}
+.thiep-preview .tp-img{height:150px;position:relative}.thiep-preview .tp-img img{width:100%;height:100%;object-fit:cover}
+.thiep-preview .tp-img span{position:absolute;left:0;right:0;bottom:0;background:rgba(35,25,10,.62);color:#fff;font-weight:800;font-size:.9rem;padding:8px 14px}
+.thiep-preview .tp-body{padding:16px 18px}.thiep-preview .tp-body p{margin:0 0 8px;white-space:pre-wrap}.thiep-preview .tp-from{text-align:right;font-style:italic;color:var(--red-deep);font-weight:700;margin:0}
+.sent-list{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.sent-list{grid-template-columns:1fr}}
+.sent{background:var(--card);border:2px solid var(--gold2);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);padding:0}
+.sent .simg{height:130px;position:relative}.sent .simg img{width:100%;height:100%;object-fit:cover}
+.sent .simg span{position:absolute;left:0;right:0;bottom:0;background:rgba(35,25,10,.62);color:#fff;font-weight:800;font-size:.88rem;padding:7px 12px}
+.sent .sbody{padding:16px 18px}.sent .meta{font-size:.85rem;color:var(--soft);margin-bottom:6px}.sent .meta b{color:var(--red-deep)}.sent p{margin:0;white-space:pre-wrap}.sent .sfrom{text-align:right;font-style:italic;color:var(--red-deep);font-weight:700;margin-top:8px}.sent .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.quiz-sec{background:var(--green);border-radius:18px;padding:30px 26px;color:#eef6ee;margin-top:56px;box-shadow:var(--shadow-lg)}@media(prefers-color-scheme:dark){.quiz-sec{background:#1d2b21}}.quiz-sec h2{color:#ffe9a8;font-size:1.75rem}.quiz-sec>p{color:#cfe3cf}
+.q{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px;margin-bottom:14px}.q h3{font-family:"Be Vietnam Pro",sans-serif;font-size:1rem;color:#fff;margin-bottom:12px}.q .opts{display:flex;flex-wrap:wrap;gap:8px}.q .opts button{font-family:inherit;font-weight:700;border-radius:999px;border:1.5px solid rgba(255,255,255,.55);background:transparent;color:#fff;padding:9px 16px;cursor:pointer}.q .opts button.right{background:#2e7d46;border-color:#2e7d46}.q .opts button.wrong{background:#a02c2c;border-color:#a02c2c}.q .fb{margin:10px 0 0;color:#ffe9a8;min-height:1.2em}.quiz-score{font-weight:900;color:#ffe9a8}
+.promise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.promise{grid-template-columns:1fr}}.promise li{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--green2);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:12px}.promise .n{font-family:"Playfair Display",serif;font-weight:900;color:var(--gold);font-size:1.35rem;line-height:1.2}
+footer{margin-top:64px;background:var(--red-deep);color:#ffeedd;padding:36px 0 42px;text-align:center}footer .hand{font-size:2.1rem;color:#ffd968;display:block;margin-bottom:8px}footer p{margin:4px 0;font-size:.95rem}footer .small{font-size:.85rem;color:#f3cfc0}
+.lb{position:fixed;inset:0;background:rgba(15,10,5,.9);display:none;align-items:center;justify-content:center;z-index:80;padding:18px}.lb.open{display:flex}.lb figure{margin:0;max-width:920px;text-align:center}.lb img{max-height:78vh;width:auto;margin:0 auto;border-radius:10px}.lb figcaption{color:#ffeedd;margin-top:12px}.lb button{position:absolute;top:14px;right:14px;background:#fff8ea;border:none;border-radius:999px;width:44px;height:44px;font-size:1.3rem;cursor:pointer;color:#3d1520}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:#234434;color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;box-shadow:var(--shadow-lg);z-index:90;transition:transform .3s;max-width:92vw;text-align:center}.toast.show{transform:translateX(-50%) translateY(0)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+</style>
+</head>
+<body>
+<div class="toolbar"><div class="wrap">
+<span class="brand">🌻 Báo tường 7A <span>• Ươm Mầm Tri Thức</span></span>
+<span class="stat">👁️ <b id="stat-visits">0</b> lượt xem</span>
+<span class="stat">❤️ <b id="stat-likes">0</b> lượt thích</span>
+<span class="stat">💌 <b id="stat-wishes">0</b> thiệp học trò</span>
+<span class="tb-spacer"></span>
+<button class="tb-btn" id="btn-edit" type="button">✏️ Chỉnh sửa báo</button>
+</div></div>
+<div class="edit-banner">✏️ <strong>Đang ở chế độ chỉnh sửa:</strong> bấm vào chữ để sửa chữ • bấm nút <strong>✏️ cây bút trên từng ảnh</strong> để thay ảnh tải lên từ máy • sửa video ở mục Video tri ân.</div>
+
+<header class="intro-hero">
+<div class="wrap">
+<div class="intro-frame" id="intro-frame">
+<div class="intro-empty" id="intro-empty">
+<span class="big" aria-hidden="true">🎬</span>
+<strong>Khung video intro “Ươm mầm Tri thức”</strong>
+<span>Khung đang để trống — bấm nút tải lên để thêm video intro của lớp vào đúng vị trí này, hoặc dán link YouTube của video.</span>
+<div class="intro-up-row">
+<label class="upload-btn" for="intro-file">📁 Tải video lên</label>
+<input id="intro-file" type="file" accept="video/*" hidden/>
+<input id="intro-url" type="url" placeholder="Hoặc dán link YouTube của video intro vào đây…"/>
+<button class="upload-btn gold2" id="btn-intro-url" type="button">▶ Chèn video</button>
+</div>
+</div>
+</div>
+<p class="intro-cap">Khung video intro “Ươm mầm Tri thức” — Chi đội 7A trường TH&amp;THCS Mường Thanh (Phân hiệu) — chào mừng Ngày Nhà giáo Việt Nam 20/11: “Tri ân thầy cô · Lan tỏa yêu thương”. Bấm “Tải video lên” trong khung để thêm video của lớp.</p>
+</div>
+</header>
+
+<div class="stats-band"><div class="wrap">
+<div class="statcell"><b id="sb-visits">0</b><span>👁️ Lượt truy cập trên máy này</span></div>
+<div class="statcell"><b id="sb-likes">0</b><span>❤️ Tổng lượt thích</span></div>
+<div class="statcell"><b id="sb-wishes">0</b><span>💌 Thiệp học trò đã gửi</span></div>
+<div class="statcell"><b>44</b><span>🎉 Năm kỷ niệm 20/11</span></div>
+</div></div>
+
+<nav class="toc" aria-label="Mục lục"><div class="wrap">
+<a href="#loi-ngo">Lời ngỏ</a><a href="#y-nghia">Ý nghĩa 20/11</a><a href="#tho">Góc thơ</a><a href="#van">Góc văn</a><a href="#video">Video</a><a href="#tranh">Góc tranh &amp; thiệp</a><a href="#loi-chuc">Lời chúc</a><a href="#do-vui">Đố vui</a>
+</div></nav>
+
+<main class="wrap">
+<section id="loi-ngo">
+<div class="sec-head"><span class="no">01</span><h2>Lời ngỏ — Tri ân người gieo chữ</h2><p>Ban biên tập Chi đội 7A</p></div>
+<div class="cols">
+<div class="letter">
+<p data-editable>Kính thưa quý thầy cô! Tháng Mười Một về, sân trường Mường Thanh lại rộn ràng sắc hoa và tiếng cười. Trong không khí hân hoan chào mừng Ngày Nhà giáo Việt Nam 20/11, tập thể Chi đội 7A chúng em xin trân trọng giới thiệu số báo tường đặc biệt với chủ đề <strong>“Ươm mầm Tri thức”</strong> — món quà nhỏ gói trọn lòng biết ơn của chúng em gửi tới những người thầy, người cô đã và đang lặng thầm gieo chữ nơi mái trường thân yêu.</p>
+<p data-editable>Mỗi bài thơ, mỗi dòng văn trong số báo này đều được chúng em viết bằng tất cả sự kính trọng và yêu thương. Có những vần thơ còn vụng về, có những câu văn chưa thật trau chuốt, nhưng đó là tiếng lòng chân thành nhất của những học trò lớp 7A dành cho thầy cô của mình.</p>
+<p data-editable>Nhân ngày 20/11, chúng em xin kính chúc toàn thể quý thầy cô giáo Trường TH&amp;THCS Mường Thanh dồi dào sức khỏe, luôn giữ vững ngọn lửa yêu nghề, để tiếp tục ươm những mầm xanh tri thức cho quê hương Mường Thanh ngày càng tươi đẹp.</p>
+<div class="sig"><span>Tập thể Chi đội 7A kính tặng</span><span class="hand">Ban biên tập Báo tường 7A</span></div>
+</div>
+<figure class="side"><img data-img="seedling" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung ảnh đang trống — bấm nút bút chì ở góc ảnh để tải ảnh lên" loading="lazy"/><span class="upload-badge">🖼️ Khung ảnh trống — bấm nút ✏️ để tải ảnh lên</span></figure>
+</div>
+<p class="quote">“Một chữ cũng là thầy, nửa chữ cũng là thầy.”<br/><span style="font-size:.95rem;font-family:'Be Vietnam Pro',sans-serif;font-style:normal;color:var(--soft)">— Tục ngữ Việt Nam —</span></p>
+<div class="student-zone" data-student-zone="loi-ngo" data-zone-label="Lời ngỏ" data-default-type="text"></div>
+</section>
+
+<section id="y-nghia">
+<div class="sec-head"><span class="no">02</span><h2>Ngày 20/11 — Ngày hội của lòng biết ơn</h2><p>Tìm hiểu cùng 7A</p></div>
+<div class="timeline">
+<article class="tcard"><span class="yr">1958</span><h3>Lần đầu được tổ chức</h3><p>Ngày Quốc tế Hiến chương các nhà giáo 20/11 được tổ chức lần đầu tiên trên toàn miền Bắc nước ta, thể hiện sự quan tâm của Đảng, Nhà nước đối với sự nghiệp trồng người.</p></article>
+<article class="tcard"><span class="yr">1982</span><h3>Ngày Nhà giáo Việt Nam</h3><p>Ngày 28/9/1982, Hội đồng Bộ trưởng ban hành Quyết định số 167/HĐBT, lấy ngày 20/11 hằng năm là Ngày Nhà giáo Việt Nam.</p></article>
+<article class="tcard"><span class="yr">2026</span><h3>Kỷ niệm 44 năm</h3><p>Năm nay, cả nước kỷ niệm 44 năm Ngày Nhà giáo Việt Nam. Đây là dịp để mỗi học sinh bày tỏ lòng tri ân tới thầy cô — những người lái đò thầm lặng của bao thế hệ.</p></article>
+</div>
+<p style="margin-top:20px">Truyền thống <strong>“Tôn sư trọng đạo”</strong> đã ăn sâu vào tâm hồn người Việt từ bao đời nay. Ngày 20/11 không chỉ là ngày của thầy cô, mà còn là ngày để mỗi chúng ta nhớ về công ơn dạy dỗ, tự nhắc mình phải học tập thật tốt, rèn luyện thật chăm — đó chính là món quà ý nghĩa nhất dâng lên thầy cô.</p>
+<div class="student-zone" data-student-zone="y-nghia" data-zone-label="Ý nghĩa 20/11" data-default-type="text"></div>
+</section>
+
+<section id="tho">
+<div class="sec-head"><span class="no">03</span><h2>Góc thơ</h2><p>Chọn bài thơ để đọc · Bấm ❤️ nếu bạn thích</p></div>
+<div class="poem-tabs" role="tablist" aria-label="Các bài thơ">
+<button role="tab" aria-selected="true" data-poem="0">Bụi phấn trắng</button>
+<button role="tab" aria-selected="false" data-poem="1">Người gieo hạt nắng</button>
+<button role="tab" aria-selected="false" data-poem="2">Dưới mái trường Mường Thanh</button>
+</div>
+<article class="poem" id="poem-box" aria-live="polite"></article>
+<div class="like-row"><button class="like-btn" data-like="poem" type="button">🤍 Thích bài thơ này · <span>0</span></button></div>
+<div class="student-zone" data-student-zone="tho" data-zone-label="Góc thơ" data-default-type="poem"></div>
+</section>
+
+<section id="van">
+<div class="sec-head"><span class="no">04</span><h2>Góc văn — Những dòng cảm nghĩ</h2><p>Văn của học trò 7A</p></div>
+<div class="full-img"><img data-img="classroom" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung ảnh đang trống — bấm nút bút chì ở góc ảnh để tải ảnh lớp học lên"/><span class="upload-badge">🖼️ Khung ảnh trống — bấm nút ✏️ để tải ảnh lên</span></div>
+<span class="img-hint" style="margin-bottom:18px">Bấm nút ✏️ trên ảnh để thay bằng ảnh lớp học thật tải lên từ máy</span>
+<article class="essay"><h3 data-editable>Chuyến đò thầm lặng</h3><p class="by">Cảm nghĩ của học trò 7A về nghề dạy học</p>
+<p data-editable>Người ta vẫn ví thầy cô là những người lái đò. Mỗi năm học là một chuyến đò qua sông: thầy cô lặng lẽ chèo lái, đưa từng lứa học trò cập bến tri thức, rồi lại quay về đón những hành khách mới. Hành khách có người nhớ, có người quên, nhưng người lái đò thì chẳng bao giờ quên một ai.</p>
+<p data-editable>Ở ngôi trường TH&amp;THCS Mường Thanh của chúng em, những “chuyến đò” ấy càng đáng trân trọng hơn. Đường đến trường của thầy cô không gần, mùa mưa đường trơn, mùa đông sương mù dày đặc, vậy mà tiếng trống trường chưa bao giờ vắng bóng thầy cô. Bụi phấn trắng rơi trên tóc, trên vai áo — đó là dấu ấn của bao năm tháng tận tụy với nghề, với trò.</p>
+<p data-editable>Chúng em — những hành khách nhỏ trên chuyến đò tri thức — xin hứa sẽ là những hành khách ngoan: biết lắng nghe, biết cố gắng, để công sức của người lái đò không hề uổng phí. Mai này dù đi xa đến đâu, chúng em vẫn nhớ về bến đò xưa, nhớ về mái trường Mường Thanh và những người thầy, người cô kính yêu.</p>
+<div class="like-row" style="justify-content:flex-start"><button class="like-btn" data-like="essay2" type="button">🤍 Thích bài viết · <span>0</span></button></div></article>
+<div class="student-zone" data-student-zone="van" data-zone-label="Góc văn" data-default-type="text"></div>
+</section>
+
+<section id="video">
+<div class="sec-head"><span class="no">05</span><h2>Video tri ân</h2><p>Thay video của lớp vào đây</p></div>
+<div class="video-box">
+<h3 data-editable>🎬 Video “Ươm mầm Tri thức” — Chi đội 7A</h3>
+<p>Dán link YouTube của video lớp (ví dụ video hát tri ân, video ảnh kỷ niệm) rồi bấm “Chèn video”, hoặc tải file video từ máy lên để xem thử ngay trên báo. Video intro “Ươm mầm Tri thức” đã được đặt ở đầu báo.</p>
+<div class="video-frame" id="video-frame">
+<div class="video-empty" id="video-empty"><span style="font-size:2.6rem">🎥</span><strong style="font-size:1.15rem">Chưa có video — hãy chèn video của lớp 7A vào đây</strong><span style="font-size:.92rem;color:#cfe3cf">Hỗ trợ: link YouTube / Vimeo hoặc file MP4 từ máy</span></div>
+</div>
+<div class="video-controls">
+<input id="video-url" type="url" placeholder="Dán link YouTube vào đây, ví dụ: https://www.youtube.com/watch?v=…"/>
+<button id="btn-video-url" type="button">▶ Chèn video</button>
+<label class="btn" for="video-file">📁 Tải video từ máy</label>
+<input id="video-file" type="file" accept="video/*" hidden/>
+</div>
+<p class="note" style="color:#cfe3cf">Lưu ý: video YouTube chèn bằng link sẽ hiện cho mọi người xem. Video tải từ máy chỉ xem được trên máy này — muốn chia sẻ cho mọi người, hãy tải video lên YouTube rồi dán link vào đây.</p>
+</div>
+<div class="student-zone" data-student-zone="video" data-zone-label="Video tri ân" data-default-type="video"></div>
+</section>
+
+<section id="tranh">
+<div class="sec-head"><span class="no">06</span><h2>Góc tranh &amp; thiệp 3D</h2><p>Ảnh thực 3D · Bấm vào tranh để xem lớn · Bấm nút ✏️ trên ảnh để thay ảnh tải lên từ máy</p></div>
+<div class="gallery">
+<article class="gcard"><button class="gimg" data-cap="“Tặng cô bó hoa tri thức” — khung tranh đang trống, bấm nút ✏️ trên khung để tải tranh hoặc ảnh lên."><img data-img="g1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung tranh đang trống — bấm nút bút chì để tải ảnh lên" loading="lazy"/><span class="upload-badge">🖼️ Khung trống — bấm ✏️ để tải ảnh lên</span></button><div class="cap"><b data-editable>Tặng cô bó hoa tri thức</b><p data-editable>Học trò 7A tặng hoa và sách tri ân cô giáo — ảnh thực 3D, ánh sáng tự nhiên.</p><div class="gfoot"><button class="mini-btn" data-like="g1" type="button">🤍 Thích · <span>0</span></button><button class="mini-btn zoom" type="button">🔍 Xem lớn</button></div></div></article>
+<article class="gcard"><button class="gimg" data-cap="“Giờ học thân thương” — khung tranh đang trống, bấm nút ✏️ trên khung để tải tranh hoặc ảnh lên."><img data-img="g2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung tranh đang trống — bấm nút bút chì để tải ảnh lên" loading="lazy"/><span class="upload-badge">🖼️ Khung trống — bấm ✏️ để tải ảnh lên</span></button><div class="cap"><b data-editable>Giờ học thân thương</b><p data-editable>Cô bên bảng xanh, trò nhỏ chăm ngoan trong lớp học ngập nắng.</p><div class="gfoot"><button class="mini-btn" data-like="g2" type="button">🤍 Thích · <span>0</span></button><button class="mini-btn zoom" type="button">🔍 Xem lớn</button></div></div></article>
+<article class="gcard"><button class="gimg" data-cap="“Ươm mầm Tri thức” — khung tranh đang trống, bấm nút ✏️ trên khung để tải tranh hoặc ảnh lên."><img data-img="g3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung tranh đang trống — bấm nút bút chì để tải ảnh lên" loading="lazy"/><span class="upload-badge">🖼️ Khung trống — bấm ✏️ để tải ảnh lên</span></button><div class="cap"><b data-editable>Ươm mầm Tri thức</b><p data-editable>Chủ đề chính của số báo — mầm xanh lớn lên từ trang sách và tình thầy trò.</p><div class="gfoot"><button class="mini-btn" data-like="g3" type="button">🤍 Thích · <span>0</span></button><button class="mini-btn zoom" type="button">🔍 Xem lớn</button></div></div></article>
+<article class="gcard"><button class="gimg" data-cap="“Thiệp hoa tặng cô” — khung tranh đang trống, bấm nút ✏️ trên khung để tải tranh hoặc ảnh lên."><img data-img="g4" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung tranh đang trống — bấm nút bút chì để tải ảnh lên" loading="lazy"/><span class="upload-badge">🖼️ Khung trống — bấm ✏️ để tải ảnh lên</span></button><div class="cap"><b data-editable>Thiệp hoa tặng cô</b><p data-editable>Tấm thiệp tinh khôi giữa hoa hướng dương và hoa hồng — dành viết lời chúc 20/11.</p><div class="gfoot"><button class="mini-btn" data-like="g4" type="button">🤍 Thích · <span>0</span></button><button class="mini-btn zoom" type="button">🔍 Xem lớn</button></div></div></article>
+</div>
+<div class="student-zone" data-student-zone="tranh" data-zone-label="Góc tranh &amp; thiệp" data-default-type="image"></div>
+</section>
+
+<section id="loi-chuc">
+<div class="sec-head"><span class="no">07</span><h2>Thiệp học trò tự làm — Gửi thầy cô</h2><p>Học sinh tự tạo thiệp · Gửi thầy cô bộ môn · Bằng tấm lòng chân tình của chính em</p></div>
+<div class="wish-hero"><img data-img="cardhero" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung ảnh thiệp đang trống — bấm nút bút chì ở góc ảnh để tải ảnh lên" loading="lazy"/><div class="ov">💐 Khung ảnh đang trống — bấm nút ✏️ để tải ảnh thiệp lên · Mỗi tấm thiệp dưới đây do chính học sinh 7A tự chọn mẫu, tự viết lời chúc và gửi lên báo</div></div>
+<p style="margin:0 0 4px">Mục này <strong>chỉ dành cho học sinh</strong>: em hãy tự làm một tấm thiệp của riêng mình — gửi tới một <strong>thầy cô bộ môn</strong> dạy lớp 7A — rồi viết lời chúc bằng chính tấm chân tình của em. Không cần lời hoa mỹ, chỉ cần thật lòng: một lời cảm ơn, một kỷ niệm nhỏ với thầy cô, một lời hứa của em… đều là món quà quý nhất ngày 20/11.</p>
+
+<form class="wish-form" id="wish-form" novalidate>
+<h3>✍️ Em tự tạo thiệp và gửi lên báo</h3>
+<p><strong>Bước 1:</strong> Chọn thầy cô em muốn gửi &nbsp;·&nbsp; <strong>Bước 2:</strong> Chọn mẫu thiệp &nbsp;·&nbsp; <strong>Bước 3:</strong> Tự viết lời chúc chân tình của em rồi bấm gửi. Thiệp của em có nút <strong>Sửa</strong> và <strong>Xóa</strong> để em chỉnh lại bất cứ lúc nào.</p>
+<input id="wish-to" type="hidden" value="bomon"/>
+<div class="field" id="teacher-field"><label for="wish-teacher">Thiệp này em gửi tới thầy / cô bộ môn nào?</label><input id="wish-teacher" type="text" maxlength="80" placeholder="Ví dụ: Cô … — môn Ngữ văn / Thầy … — môn Toán"/></div>
+<label>Chọn mẫu thiệp của em</label>
+<div class="style-picker" role="group" aria-label="Chọn mẫu thiệp">
+<button type="button" class="style-opt" data-style="huongduong" aria-pressed="true"><span class="style-swatch sw1" aria-hidden="true">🌻</span><span>🌻 Hoa hướng dương</span></button>
+<button type="button" class="style-opt" data-style="santtruong" aria-pressed="false"><span class="style-swatch sw2" aria-hidden="true">🏫</span><span>🏫 Sân trường nắng sớm</span></button>
+<button type="button" class="style-opt" data-style="mamxanh" aria-pressed="false"><span class="style-swatch sw3" aria-hidden="true">🌱</span><span>🌱 Mầm xanh tri thức</span></button>
+<button type="button" class="style-opt" data-style="lophoc" aria-pressed="false"><span class="style-swatch sw4" aria-hidden="true">📖</span><span>📖 Giờ học thân thương</span></button>
+</div>
+<input id="wish-style" type="hidden" value="huongduong"/>
+<div class="row">
+<div class="field"><label for="wish-name">Tên học sinh gửi thiệp</label><input id="wish-name" type="text" maxlength="60" placeholder="Ví dụ: Em … — Chi đội 7A" autocomplete="name"/></div>
+<div class="field"><label for="wish-text" style="visibility:hidden">.</label><p class="note" style="margin:0">Hãy viết như em đang nói với thầy cô: cảm ơn điều gì, nhớ kỷ niệm nào, hứa điều gì…</p></div>
+</div>
+<div class="field"><label for="wish-text">Lời chúc chân tình của em</label><textarea id="wish-text" maxlength="500" placeholder="Em kính chúc thầy cô…" required></textarea></div>
+<label>Xem trước thiệp của em</label>
+<div class="thiep-preview" aria-live="polite"><div class="tp-img"><img id="tp-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Khung mẫu thiệp đang chọn — khung trống chờ ảnh"/><span id="tp-to">Gửi thầy / cô bộ môn — Lớp 7A</span></div><div class="tp-body"><p id="tp-text">Lời chúc của em sẽ hiện ở đây…</p><p class="tp-from" id="tp-from">— Học sinh Chi đội 7A</p></div></div>
+<button type="submit" id="wish-submit">💌 Gửi thiệp lên báo</button>
+<button type="button" id="wish-cancel-edit" class="mini-btn" style="display:none;margin-left:8px">Hủy sửa</button>
+<p class="note">Thiệp em gửi sẽ hiện ngay ở phần “Thiệp học trò đã gửi” bên dưới, lưu trên máy của em để em xem, sửa và xóa trên chính thiết bị đó.</p>
+<p class="note" id="wish-error" style="color:var(--red-deep);font-weight:800" aria-live="polite"></p>
+</form>
+<h3 style="font-family:'Playfair Display',serif;color:var(--red-deep);font-size:1.4rem;margin:26px 0 4px">💌 Thiệp học trò đã gửi</h3>
+<p class="note" style="margin:0 0 6px">Những tấm thiệp do chính các em học sinh tự làm và gửi lên, dành tặng thầy cô bộ môn của lớp.</p>
+<div class="sent-list" id="wish-list" aria-live="polite"></div>
+<p class="note" id="wish-empty" style="font-style:italic">Chưa có thiệp nào được gửi từ máy này. Tấm thiệp đầu tiên hãy là của em, dành tặng thầy cô nhé!</p>
+</section>
+
+<section class="quiz-sec" id="do-vui"><h2>Đố vui 20/11</h2><p>Trả lời 3 câu hỏi nhỏ về Ngày Nhà giáo Việt Nam nhé!</p><div id="quiz"></div><p class="quiz-score" id="quiz-score" aria-live="polite"></p></section>
+
+</main>
+
+<footer><div class="wrap">
+<span class="hand">Kính chúc mừng Ngày Nhà giáo Việt Nam 20/11!</span>
+<p><strong>Báo tường số “Ươm mầm Tri thức” — Chạm vào miền tri ân</strong> — Chi đội 7A, Trường TH&amp;THCS Mường Thanh</p>
+<p>Thực hiện: Tập thể Chi đội 7A</p>
+<p class="small">Số báo tháng 11/2026 — Chào mừng 44 năm Ngày Nhà giáo Việt Nam (20/11/1982 — 20/11/2026)</p>
+</div></footer>
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem tranh lớn"><button id="lb-close" aria-label="Đóng">✕</button><figure><img id="lb-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E" alt="Tranh đang xem"/><figcaption id="lb-cap"></figcaption></figure></div>
+<input type="file" id="img-picker" accept="image/*" hidden/>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+function $(s,c){return (c||document).querySelector(s)} function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
+function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3400)}
+function storeGet(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function storeSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+/* ===== THỐNG KÊ LƯỢT TRUY CẬP ===== */
+var visits=storeGet('bt7a_visits_v2',0)+1; storeSet('bt7a_visits_v2',visits);
+/* ===== LIKE ===== */
+var likes=storeGet('bt7a_likes_v2',{}); // {key:true}
+function totalLikes(){return Object.keys(likes).filter(function(k){return likes[k]}).length}
+function paintLikes(){
+  $$('[data-like]').forEach(function(b){var k=b.getAttribute('data-like');var on=!!likes[k];b.classList.toggle('liked',on);b.classList.toggle('liked',on);var sp=b.querySelector('span');if(sp)sp.textContent=on?1:0; b.firstChild.textContent=on?'❤️ Thích · ':'🤍 Thích · '; if(b.classList.contains('mini-btn')||b.classList.contains('like-btn')){b.innerHTML=(on?'❤️':'🤍')+' Thích · <span>'+(on?1:0)+'</span>'}});
+  $('#stat-visits').textContent=visits; $('#sb-visits').textContent=visits;
+  $('#stat-likes').textContent=totalLikes(); $('#sb-likes').textContent=totalLikes();
+}
+$$('[data-like]').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();var k=b.getAttribute('data-like');likes[k]=!likes[k];if(!likes[k])delete likes[k];storeSet('bt7a_likes_v2',likes);paintLikes();if(likes[k])toast('❤️ Cảm ơn bạn đã thả tim cho Chi đội 7A!')})});
+/* ===== THƠ ===== */
+var poems=[
+{title:'Bụi phấn trắng',by:'Sáng tác của tập thể Chi đội 7A, kính tặng quý thầy cô',stanzas:[['Mỗi sớm mai cô đến lớp đầu tiên,','Bảng xanh chờ nét phấn thân quen.','Viên phấn nhỏ đi qua năm tháng,','Tóc cô thêm sợi bạc lặng thầm.'],['Bụi phấn rơi trên vai áo cô,','Rơi vào trang vở tuổi học trò.','Từng con chữ lớn lên từ phấn trắng,','Thành hành trang em bước vào đời.'],['Mai sau dù đi khắp phương trời,','Ơn cô em nhớ mãi không nguôi.','Bụi phấn trắng — màu hoa đẹp nhất,','Nở trong tim em suốt một đời.']]},
+{title:'Người gieo hạt nắng',by:'Sáng tác của tập thể Chi đội 7A, kính tặng quý thầy cô',stanzas:[['Cô gieo hạt nắng xuống luống cày,','Là trang sách mở mỗi sớm mai.','Hạt mầm tri thức lên xanh lá,','Nhờ bàn tay cô tháng năm dài.'],['Có hạt rơi vào đất khô cằn,','Cô kiên nhẫn tưới bằng ân cần.','Có mầm còn ngại mưa, ngại nắng,','Cô che chở bằng cả tấm lòng.'],['Rồi một ngày vườn ươm rợp bóng,','Đàn chim nhỏ tung cánh bay xa.','Người gieo hạt đứng lặng sân trường,','Mắt nhìn theo, miệng nở nụ cười.']]},
+{title:'Dưới mái trường Mường Thanh',by:'Sáng tác của tập thể Chi đội 7A',stanzas:[['Núi rừng Mường Thanh sương giăng lối,','Đường em đến lớp bước chân quen.','Mái trường thân thương nơi bản nhỏ,','Tiếng thầy cô ấm cả mùa đông.'],['Sân trường rợp bóng cây xanh mát,','Tiếng trống vang giục giã tuổi thơ.','Khăn quàng đỏ tung bay trong gió,','Ước mơ em chắp cánh từ đây.'],['Mai này khôn lớn đi muôn nơi,','Tim em vẫn nhớ mái trường ơi.','Nhớ thầy cô — người ươm mầm tri thức,','Cho quê hương thắm mãi sắc xuân.']]}];
+var poemBox=$('#poem-box'),tabs=$$('.poem-tabs button');
+function showPoem(i){var p=poems[i];var html='<h3>'+p.title+'</h3><p class="by">'+p.by+'</p>';p.stanzas.forEach(function(st){html+='<p class="stanza">'+st.join('<br/>')+'</p>'});poemBox.innerHTML=html;tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i?'true':'false')})}
+tabs.forEach(function(t){t.addEventListener('click',function(){showPoem(parseInt(t.getAttribute('data-poem'),10))})});showPoem(0);
+/* ===== THIỆP LỜI CHÚC: mở ===== */
+$$('.wishcard').forEach(function(card){var btn=$('.wish-toggle',card);btn.addEventListener('click',function(){if(document.body.classList.contains('editing'))return;var open=card.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')})});
+/* ===== VIDEO ===== */
+var videoFrame=$('#video-frame');
+function ytId(url){var m=url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);return m?m[1]:null}
+function setVideoEmbed(src){videoFrame.innerHTML='<iframe src="'+src+'" title="Video tri ân Chi đội 7A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';storeSet('bt7a_video',{type:'embed',src:src})}
+$('#btn-video-url').addEventListener('click',function(){var url=$('#video-url').value.trim();if(!url){toast('Hãy dán link YouTube trước nhé!');return}var id=ytId(url);if(id){setVideoEmbed('https://www.youtube.com/embed/'+id);toast('🎬 Đã chèn video YouTube vào báo!')}else if(url.indexOf('vimeo.com')>-1){var vm=url.match(/vimeo\.com\/(\d+)/);if(vm){setVideoEmbed('https://player.vimeo.com/video/'+vm[1]);toast('🎬 Đã chèn video Vimeo!')}else toast('Link Vimeo chưa đúng, cô kiểm tra lại nhé!')}else toast('Link chưa đúng định dạng YouTube/Vimeo, cô kiểm tra lại nhé!')});
+$('#video-file').addEventListener('change',function(){var f=this.files[0];if(!f)return;var url=URL.createObjectURL(f);videoFrame.innerHTML='<video src="'+url+'" controls playsinline></video>';toast('🎬 Đang xem thử video từ máy — video này chỉ hiện trên máy này, muốn chia sẻ hãy dùng link YouTube nhé!')});
+(function(){var v=storeGet('bt7a_video',null);if(v&&v.type==='embed'&&v.src)setVideoEmbed(v.src)})();
+/* ===== VIDEO INTRO ĐẦU TRANG (khung chờ — bản nhẹ, chưa nhúng sẵn video) ===== */
+(function(){
+var frame=$('#intro-frame');if(!frame)return;
+function setIntroEmbed(src){frame.innerHTML='<iframe src="'+src+'" title="Video intro Ươm mầm Tri thức" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';storeSet('bt7a_intro',{type:'embed',src:src})}
+var saved=storeGet('bt7a_intro',null);
+if(saved&&saved.type==='embed'&&saved.src){setIntroEmbed(saved.src);return}
+var urlBtn=$('#btn-intro-url');
+if(urlBtn)urlBtn.addEventListener('click',function(){var url=$('#intro-url').value.trim();if(!url){toast('Hãy dán link YouTube của video intro trước nhé!');return}var id=ytId(url);if(id){setIntroEmbed('https://www.youtube.com/embed/'+id);toast('🎬 Đã chèn video intro vào báo!')}else if(url.indexOf('vimeo.com')>-1){var vm=url.match(/vimeo\.com\/(\d+)/);if(vm){setIntroEmbed('https://player.vimeo.com/video/'+vm[1]);toast('🎬 Đã chèn video intro vào báo!')}else toast('Link Vimeo chưa đúng, kiểm tra lại nhé!')}else toast('Link chưa đúng định dạng YouTube/Vimeo, kiểm tra lại nhé!')});
+var fileIn=$('#intro-file');
+if(fileIn)fileIn.addEventListener('change',function(){var f=this.files[0];if(!f)return;var u=URL.createObjectURL(f);frame.innerHTML='<video src="'+u+'" controls playsinline></video>';toast('🎬 Đang xem video intro tải từ máy — video này chỉ hiện trên máy này, muốn chia sẻ cho mọi người hãy dùng link YouTube nhé!')});
+})();
+/* ===== HỌC SINH TỰ TẠO THIỆP: GỬI THẦY CÔ BỘ MÔN ===== */
+(function(){
+var KEY='bt7a_thiep_hoc_sinh_v3';var form=$('#wish-form'),list=$('#wish-list'),empty=$('#wish-empty'),err=$('#wish-error'),submitBtn=$('#wish-submit'),cancelBtn=$('#wish-cancel-edit');var editingIdx=-1;
+var PH="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23fdf6e9'/%3E%3Crect x='40' y='40' width='1120' height='720' rx='28' fill='none' stroke='%23b8860b' stroke-width='5' stroke-dasharray='18 14'/%3E%3Ccircle cx='440' cy='300' r='54' fill='%23d9a441'/%3E%3Cpath d='M280 580 L520 390 L670 510 L770 420 L940 580 Z' fill='%232f5d3a' fill-opacity='0.5'/%3E%3C/svg%3E";
+var STYLES={huongduong:{img:PH,label:'Hoa hướng dương'},santtruong:{img:PH,label:'Sân trường nắng sớm'},mamxanh:{img:PH,label:'Mầm xanh tri thức'},lophoc:{img:PH,label:'Giờ học thân thương'}};
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function get(){return storeGet(KEY,[])}
+function paintStats(){var n=get().length;$('#stat-wishes').textContent=n;$('#sb-wishes').textContent=n}
+function recipientLabel(it){if(it.teacher)return 'Gửi '+it.teacher+' — Thầy cô bộ môn lớp 7A';return 'Gửi thầy / cô bộ môn — Lớp 7A'}
+function setKind(){$('#wish-to').value='bomon';$('#teacher-field').style.display='block';updatePreview()}
+function setStyle(s){if(!STYLES[s])s='huongduong';$('#wish-style').value=s;$$('.style-opt').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-style')===s?'true':'false')});updatePreview()}
+function currentItemPreview(){var kind=$('#wish-to').value;var teacher=$('#wish-teacher').value.trim();return {kind:kind,teacher:teacher,style:$('#wish-style').value,name:$('#wish-name').value.trim(),text:$('#wish-text').value.trim()}}
+function updatePreview(){var it=currentItemPreview();var st=STYLES[it.style]||STYLES.huongduong;$('#tp-img').src=st.img;$('#tp-to').textContent=recipientLabel(it);$('#tp-text').textContent=it.text||'Lời chúc của em sẽ hiện ở đây…';$('#tp-from').textContent='— '+(it.name||'Học sinh Chi đội 7A')}
+$$('.style-opt').forEach(function(b){b.addEventListener('click',function(){setStyle(b.getAttribute('data-style'))})});
+['wish-teacher','wish-name','wish-text'].forEach(function(id){$('#'+id).addEventListener('input',updatePreview)});
+function render(){var items=get();empty.style.display=items.length?'none':'block';list.innerHTML=items.map(function(it,i){var st=STYLES[it.style]||STYLES.huongduong;return '<article class="sent"><div class="simg"><img src="'+st.img+'" alt="Mẫu thiệp '+esc(st.label)+'"/><span>'+esc(recipientLabel(it))+'</span></div><div class="sbody"><p class="meta">Thiệp của học sinh · '+esc(it.when||'')+' · Mẫu: '+esc(st.label)+'</p><p>'+esc(it.text)+'</p><p class="sfrom">— '+esc(it.name||'Học sinh Chi đội 7A')+'</p><div class="acts"><button type="button" class="mini-btn" data-act="like" data-i="'+i+'">'+(it.liked?'❤️':'🤍')+' Thích'+(it.liked?' · 1':'')+'</button><button type="button" class="mini-btn" data-act="edit" data-i="'+i+'">✏️ Sửa thiệp</button><button type="button" class="mini-btn" data-act="del" data-i="'+i+'">🗑️ Xóa</button></div></div></article>'}).join('');
+$$('button',list).forEach(function(b){b.addEventListener('click',function(){var i=parseInt(b.getAttribute('data-i'),10);var arr=get();var act=b.getAttribute('data-act');if(act==='del'){arr.splice(i,1);storeSet(KEY,arr);if(editingIdx===i)resetForm();render();toast('Đã xóa thiệp của em')}else if(act==='like'){arr[i].liked=!arr[i].liked;storeSet(KEY,arr);render()}else if(act==='edit'){editingIdx=i;var it=arr[i];setKind();$('#wish-teacher').value=it.teacher||'';setStyle(it.style||'huongduong');$('#wish-name').value=it.name||'';$('#wish-text').value=it.text||'';updatePreview();submitBtn.textContent='💾 Lưu thiệp đã sửa';cancelBtn.style.display='inline-flex';$('#wish-text').focus();window.scrollTo({top:form.offsetTop-90,behavior:'smooth'})}})});
+paintStats()}
+function resetForm(){editingIdx=-1;form.reset();setKind();setStyle('huongduong');$('#wish-teacher').value='';updatePreview();submitBtn.textContent='💌 Gửi thiệp lên báo';cancelBtn.style.display='none'}
+cancelBtn.addEventListener('click',resetForm);
+form.addEventListener('submit',function(e){e.preventDefault();var it=currentItemPreview();if(!it.teacher){err.textContent='Em hãy ghi tên thầy / cô bộ môn và môn học để thiệp gửi đúng thầy cô nhé!';$('#wish-teacher').focus();return}if(!it.text){err.textContent='Em hãy tự viết lời chúc chân tình của mình trước khi gửi thiệp nhé!';$('#wish-text').focus();return}err.textContent='';var arr=get();var item={kind:it.kind,teacher:it.teacher,style:it.style,name:it.name,text:it.text,when:new Date().toLocaleDateString('vi-VN'),liked:false};
+if(editingIdx>=0){item.liked=arr[editingIdx].liked;item.when=arr[editingIdx].when;arr[editingIdx]=item;toast('✏️ Đã sửa thiệp của em thành công!')}else{arr.unshift(item);toast('💌 Thiệp của em đã được gửi lên báo. Cảm ơn tấm lòng chân tình của em dành cho thầy cô!')}
+storeSet(KEY,arr);resetForm();render()});
+setKind();setStyle('huongduong');render();
+})();
+/* ===== ĐỐ VUI ===== */
+var questions=[{q:'Ngày 20/11 được chính thức lấy là Ngày Nhà giáo Việt Nam vào năm nào?',opts:['1958','1982','1975'],right:1,why:'Đúng rồi! Ngày 28/9/1982, Hội đồng Bộ trưởng ban hành Quyết định 167/HĐBT lấy 20/11 là Ngày Nhà giáo Việt Nam.'},{q:'Truyền thống tốt đẹp của dân tộc ta về người thầy được gói gọn trong câu nào?',opts:['Tôn sư trọng đạo','Uống nước nhớ nguồn','Ăn quả nhớ kẻ trồng cây'],right:0,why:'Chính xác! “Tôn sư trọng đạo” là truyền thống quý báu bao đời của dân tộc Việt Nam.'},{q:'Ngày 20/11/2026 là kỷ niệm bao nhiêu năm Ngày Nhà giáo Việt Nam?',opts:['40 năm','42 năm','44 năm'],right:2,why:'Đúng rồi! 2026 − 1982 = 44 năm Ngày Nhà giáo Việt Nam.'}];
+var quizBox=$('#quiz'),scoreEl=$('#quiz-score'),answered=0,correct=0;
+questions.forEach(function(item,qi){var div=document.createElement('div');div.className='q';var h=document.createElement('h3');h.textContent='Câu '+(qi+1)+': '+item.q;div.appendChild(h);var opts=document.createElement('div');opts.className='opts';var fb=document.createElement('p');fb.className='fb';item.opts.forEach(function(text,oi){var b=document.createElement('button');b.textContent=text;b.addEventListener('click',function(){if(div.getAttribute('data-done'))return;div.setAttribute('data-done','1');answered++;if(oi===item.right){b.classList.add('right');correct++;fb.textContent='🎉 '+item.why}else{b.classList.add('wrong');fb.textContent='Chưa đúng rồi. Đáp án đúng là: '+item.opts[item.right]+'. '+item.why}if(answered===questions.length){scoreEl.textContent='Kết quả của bạn: '+correct+'/'+questions.length+(correct===questions.length?' — Tuyệt vời! Bạn hiểu rất rõ về ngày 20/11!':' — Cảm ơn bạn đã tham gia đố vui cùng 7A!')}});opts.appendChild(b)});div.appendChild(opts);div.appendChild(fb);quizBox.appendChild(div)});
+/* ===== XEM TRANH LỚN ===== */
+var lb=$('#lightbox'),lbImg=$('#lb-img'),lbCap=$('#lb-cap');
+function openLB(src,cap,alt){lbImg.src=src;lbImg.alt=alt||'Tranh đang xem';lbCap.textContent=cap||'';lb.classList.add('open')}
+$$('.gcard').forEach(function(card){var main=$('.gimg',card);var zoom=$('.zoom',card);function go(){if(document.body.classList.contains('editing'))return;var img=$('img',card);openLB(img.src,main.getAttribute('data-cap'),img.alt)}main.addEventListener('click',go);if(zoom)zoom.addEventListener('click',go)});
+$('#lb-close').addEventListener('click',function(){lb.classList.remove('open')});lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open')});
+/* ===== CHẾ ĐỘ CHỈNH SỬA: chữ + ảnh ===== */
+var picker=$('#img-picker'),currentImg=null,imgOverrides=storeGet('bt7a_imgs_v2',{});
+function hideBadgeFor(img){var w=img.parentElement;if(!w)return;var bd=w.querySelector('.upload-badge');if(bd)bd.style.display='none'}
+function applyImgOverrides(){$$('img[data-img]').forEach(function(img){var k=img.getAttribute('data-img');if(imgOverrides[k]){img.src=imgOverrides[k];hideBadgeFor(img)}})}
+applyImgOverrides();
+function pickFor(img){currentImg=img;picker.value='';picker.click()}
+/* Nút ✏️ cây bút trên từng ảnh: bấm là thay ảnh tải lên từ máy, không cần bật chế độ sửa */
+$$('img[data-img]').forEach(function(img){
+  var host=img.closest('.gcard, figure, .full-img, .wish-hero, .hero')||img.parentElement;
+  if(host)host.classList.add('img-host');
+  var btn=document.createElement('button');btn.type='button';btn.className='img-edit-btn';btn.textContent='✏️';btn.title='Thay ảnh này bằng ảnh tải lên từ máy';btn.setAttribute('aria-label','Thay ảnh bằng ảnh tải lên từ máy');
+  btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();pickFor(img)});
+  if(host)host.appendChild(btn);
+  img.addEventListener('click',function(){if(!document.body.classList.contains('editing'))return;pickFor(img)});
+});
+picker.addEventListener('change',function(){var f=this.files[0];if(!f||!currentImg)return;var r=new FileReader();r.onload=function(){currentImg.src=r.result;hideBadgeFor(currentImg);imgOverrides[currentImg.getAttribute('data-img')]=r.result;storeSet('bt7a_imgs_v2',imgOverrides);/* cập nhật luôn ảnh xem lớn của tranh cùng ảnh */$$('.gcard').forEach(function(card){var im=$('img',card);var main=$('.gimg',card);if(im&&main&&currentImg.getAttribute('data-img')&&im.src===r.result){}});toast('🖼️ Đã thay ảnh bằng ảnh tải lên từ máy!')};r.readAsDataURL(f)});
+var editBtn=$('#btn-edit');
+function setEditing(on){document.body.classList.toggle('editing',on);editBtn.classList.toggle('active',on);editBtn.textContent=on?'✅ Xong — tắt sửa':'✏️ Chỉnh sửa báo';$$('[data-editable]').forEach(function(el){if(on){el.setAttribute('contenteditable','true')}else{el.removeAttribute('contenteditable')}});if(on)toast('✏️ Chế độ sửa: bấm vào chữ để sửa chữ, bấm nút ✏️ trên ảnh để thay ảnh từ máy')}
+editBtn.addEventListener('click',function(){setEditing(!document.body.classList.contains('editing'))});
+/* ===== HỌC SINH THÊM NỘI DUNG BẰNG DẤU + Ở CÁC MỤC: THƠ / VĂN / ẢNH / VIDEO ===== */
+(function(){
+var SKEY='bt7a_student_content_v1';
+var TYPE_LABEL={poem:'Bài thơ',text:'Bài văn / Bài viết',image:'Hình ảnh',video:'Video'};
+var persisted=storeGet(SKEY,[]);
+var runtime=[]; // video tải từ máy: chỉ xem trong lần mở này
+function escS(s){return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function allItems(){return persisted.concat(runtime)}
+function savePersisted(){storeSet(SKEY,persisted)}
+function ytEmbed(url){var m=String(url||'').match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);if(m)return 'https://www.youtube.com/embed/'+m[1];var vm=String(url||'').match(/vimeo\.com\/(\d+)/);if(vm)return 'https://player.vimeo.com/video/'+vm[1];return null}
+function downscaleImage(file,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var max=1200;var w=im.width,h=im.height;if(w>max||h>max){var sc=max/Math.max(w,h);w=Math.round(w*sc);h=Math.round(h*sc)}var cv=document.createElement('canvas');cv.width=w;cv.height=h;var cx=cv.getContext('2d');cx.drawImage(im,0,0,w,h);try{cb(cv.toDataURL('image/jpeg',0.82))}catch(e){cb(r.result)}};im.onerror=function(){cb(r.result)};im.src=r.result};r.readAsDataURL(file)}
+$$('.student-zone').forEach(function(zone){
+  var zoneId=zone.getAttribute('data-student-zone');
+  var zoneLabel=(zone.getAttribute('data-zone-label')||'mục này').replace(/&amp;/g,'&');
+  var defType=zone.getAttribute('data-default-type')||'text';
+  zone.innerHTML=
+  '<div class="add-bar"><button type="button" class="add-plus" aria-label="Thêm nội dung vào '+escS(zoneLabel)+'">+</button><div class="add-txt"><b>Bấm dấu + để thêm nội dung vào '+escS(zoneLabel)+'</b></div></div>'
+  +'<div class="add-panel" aria-live="polite"><h3>➕ Thêm nội dung vào '+escS(zoneLabel)+'</h3>'
+  +'<div class="row2"><div class="field"><label>Loại nội dung muốn thêm</label><select class="f-type"><option value="poem">📝 Bài thơ</option><option value="text">✍️ Bài văn / bài viết</option><option value="image">🖼️ Hình ảnh</option><option value="video">🎬 Video</option></select></div>'
+  +'<div class="field"><label>Tên học sinh</label><input class="f-author" type="text" maxlength="60" placeholder="Ví dụ: … — Chi đội 7A"/></div></div>'
+  +'<div class="field"><label>Tiêu đề</label><input class="f-title" type="text" maxlength="90" placeholder="Ví dụ: Bài thơ tặng cô, Ảnh lớp em ngày 20/11…"/></div>'
+  +'<div class="field f-text"><label class="f-text-label">Nội dung bài thơ / bài văn</label><textarea class="f-content" maxlength="3000" placeholder="Viết ở đây…"></textarea></div>'
+  +'<div class="field f-image" style="display:none"><label>Chọn hình ảnh từ máy</label><input class="f-imgfile" type="file" accept="image/*"/><img class="add-preview-img f-imgpreview" alt="Ảnh vừa chọn"/><div class="field" style="margin-top:10px"><label>Chú thích cho ảnh (không bắt buộc)</label><input class="f-caption" type="text" maxlength="200" placeholder="Ví dụ: Lớp 7A tặng hoa cô ngày 20/11"/></div></div>'
+  +'<div class="field f-video" style="display:none"><label>Dán link video YouTube / Vimeo</label><input class="f-videourl" type="url" placeholder="https://www.youtube.com/watch?v=…"/><input class="f-videofile" type="file" accept="video/*" style="margin-top:10px"/></div>'
+  +'<button type="button" class="add-submit">💌 Gửi nội dung lên báo</button><button type="button" class="mini-btn add-cancel">Đóng</button>'
+  +'<p class="add-err" aria-live="polite"></p></div>'
+  +'<div class="stu-list"></div>';
+  var plus=$('.add-plus',zone),panel=$('.add-panel',zone),typeSel=$('.f-type',zone),list=$('.stu-list',zone),empty=$('.stu-empty',zone),err=$('.add-err',zone);
+  var pendingImg='',pendingVideoFile=null;
+  typeSel.value=defType;
+  function syncFields(){var t=typeSel.value;$('.f-text',zone).style.display=(t==='poem'||t==='text')?'block':'none';$('.f-image',zone).style.display=(t==='image')?'block':'none';$('.f-video',zone).style.display=(t==='video')?'block':'none';$('.f-text-label',zone).textContent=(t==='poem')?'Nội dung bài thơ':'Nội dung bài văn / bài viết'}
+  typeSel.addEventListener('change',syncFields);syncFields();
+  plus.addEventListener('click',function(){panel.classList.toggle('open');if(panel.classList.contains('open')){typeSel.focus()}});
+  $('.add-cancel',zone).addEventListener('click',function(){panel.classList.remove('open')});
+  $('.f-imgfile',zone).addEventListener('change',function(){var f=this.files[0];if(!f)return;downscaleImage(f,function(data){pendingImg=data;var pv=$('.f-imgpreview',zone);pv.src=data;pv.style.display='block';toast('🖼️ Đã chọn ảnh — bấm “Gửi nội dung” để đưa ảnh lên báo nhé!')})});
+  $('.f-videofile',zone).addEventListener('change',function(){pendingVideoFile=this.files[0]||null;if(pendingVideoFile)toast('🎬 Đã chọn video từ máy — bấm “Gửi nội dung” để xem ngay trong lần mở này.')});
+  function render(){
+    var items=allItems().filter(function(it){return it.zone===zoneId});
+    if(empty)empty.style.display='none';
+    list.innerHTML=items.map(function(it){
+      var idx=allItems().indexOf(it);
+      var media='';
+      if(it.type==='image'&&it.img)media='<img class="stu-img" src="'+it.img+'" alt="'+escS(it.title||'Ảnh học sinh thêm vào báo')+'"/>';
+      if(it.type==='video'&&it.embed)media='<div class="stu-vid"><iframe src="'+escS(it.embed)+'" title="'+escS(it.title||'Video học sinh')+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+      if(it.type==='video'&&it.blob)media='<div class="stu-vid"><video src="'+it.blob+'" controls playsinline></video></div>';
+      var body='';
+      if(it.type==='poem'||it.type==='text')body='<div class="stu-text">'+escS(it.text)+'</div>';
+      if(it.type==='image'&&it.caption)body='<div class="stu-text">'+escS(it.caption)+'</div>';
+      if(it.type==='video'&&it.text)body='<div class="stu-text">'+escS(it.text)+'</div>';
+      return '<article class="stu-card'+(it.type==='poem'?' poem-card':'')+'"><span class="stu-type">'+escS(TYPE_LABEL[it.type]||'Nội dung')+' · Học sinh thêm</span><h3>'+escS(it.title||TYPE_LABEL[it.type]||'Nội dung của học sinh')+'</h3><p class="stu-by">'+escS(it.author||'Học sinh Chi đội 7A')+(it.when?' · '+escS(it.when):'')+'</p>'+media+body+'<div class="stu-acts"><button type="button" class="mini-btn" data-sact="like" data-sidx="'+idx+'">'+(it.liked?'❤️ Thích · 1':'🤍 Thích')+'</button><button type="button" class="mini-btn" data-sact="del" data-sidx="'+idx+'">🗑️ Xóa nội dung này</button></div></article>'
+    }).join('');
+    $$('button[data-sact]',list).forEach(function(b){b.addEventListener('click',function(){
+      var gi=parseInt(b.getAttribute('data-sidx'),10);var combined=allItems();var target=combined[gi];if(!target)return;
+      // tìm lại trong persisted hoặc runtime
+      var pi=persisted.indexOf(target),ri=runtime.indexOf(target);
+      if(b.getAttribute('data-sact')==='del'){if(pi>-1){persisted.splice(pi,1);savePersisted()}else if(ri>-1){runtime.splice(ri,1)}renderAll();toast('Đã xóa nội dung khỏi mục này')}
+      else{if(target){target.liked=!target.liked;if(pi>-1)savePersisted();renderAll()}}
+    })});
+  }
+  zone._renderStudent=render;
+  $('.add-submit',zone).addEventListener('click',function(){
+    var t=typeSel.value;var title=$('.f-title',zone).value.trim();var author=$('.f-author',zone).value.trim();var text=$('.f-content',zone).value.trim();var caption=$('.f-caption',zone).value.trim();var vurl=$('.f-videourl',zone).value.trim();
+    err.textContent='';
+    var item={id:Date.now()+''+Math.floor(Math.random()*999),zone:zoneId,type:t,title:title,author:author,when:new Date().toLocaleDateString('vi-VN'),liked:false};
+    if(t==='poem'||t==='text'){if(!text){err.textContent='Em hãy viết nội dung '+(t==='poem'?'bài thơ':'bài văn')+' của mình trước khi gửi nhé!';$('.f-content',zone).focus();return}item.text=text}
+    if(t==='image'){if(!pendingImg){err.textContent='Em hãy chọn một hình ảnh từ máy trước khi gửi nhé!';return}item.img=pendingImg;item.caption=caption}
+    if(t==='video'){
+      var emb=vurl?ytEmbed(vurl):null;
+      if(vurl&&!emb){err.textContent='Link video chưa đúng định dạng YouTube / Vimeo, em kiểm tra lại nhé!';return}
+      if(!emb&&!pendingVideoFile){err.textContent='Em hãy dán link YouTube hoặc chọn video từ máy trước khi gửi nhé!';return}
+      if(emb){item.embed=emb;persisted.unshift(item);savePersisted()}
+      else{item.blob=URL.createObjectURL(pendingVideoFile);item.sessionOnly=true;runtime.unshift(item)}
+      if(caption)item.text=caption;
+    } else {
+      persisted.unshift(item);savePersisted();
+    }
+    // reset form
+    $('.f-title',zone).value='';$('.f-content',zone).value='';$('.f-caption',zone).value='';$('.f-videourl',zone).value='';$('.f-imgfile',zone).value='';$('.f-videofile',zone).value='';pendingImg='';pendingVideoFile=null;var pv=$('.f-imgpreview',zone);pv.style.display='none';pv.removeAttribute('src');
+    panel.classList.remove('open');renderAll();
+    toast(t==='video'&&item.sessionOnly?'🎬 Video đã được thêm — video tải từ máy chỉ xem được trong lần mở này, muốn chia sẻ hãy dùng link YouTube nhé!':'🎉 Nội dung đã được thêm vào '+zoneLabel+'!');
+  });
+  render();
+  function renderAll(){$$('.student-zone').forEach(function(z){if(z._renderStudent)z._renderStudent()})}
+  zone._renderAll=renderAll;
+});
+})();
+paintLikes();
+</script>
+</body>
+</html>
 
